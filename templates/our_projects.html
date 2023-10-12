@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block page_title %} Наши проекты {% endblock %}
+
+{% block h1_title %} Выберите проекты, который вы хотели бы заказать {% endblock %}
+
+{% block content %}
+
+<p>
+  <a href="#">Разработатка сайтов</a>
+</p>
+<p>
+  <a href="#">Создание лендингов</a>
+</p>
+<p>
+  <a href="#">Продвижение сайтов</a>
+</p>
+
+{% endblock %}

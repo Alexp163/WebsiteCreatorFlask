@@ -1,2 +1,3 @@
-if __name__ == '__main__':
-    main()
+from flask import Flask
+
+app = Flask(__name__, template_folder="../templates")

@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block page_title %}  Регистрация {% endblock %}
+
+{% block h1_title %} Пройдите регистрацию {% endblock %}
+
+{% block content %}
+
+     <ul>
+         <li>
+             <input type="text" placeholder="Введите логин">
+         </li>
+          <li>
+             <input type="text" placeholder="Введите пароль">
+         </li>
+          <li>
+             <input type="text" placeholder="Повторите паролль">
+         </li>
+     </ul>
+
+{% endblock %}

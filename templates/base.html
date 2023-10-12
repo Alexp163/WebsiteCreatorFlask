@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block page_title %} {% endblock %}</title>
 </head>
 <body>
-
+    <h1>{% block h1_title %} {% endblock %}</h1>
+    <ul>
+        <li>
+            <a href='{{ url_for("index") }}'>Главная</a>
+        </li>
+        <li>
+            <a href='{{ url_for("our_projects") }}'>Наши проекты</a>
+        </li>
+        <li>
+            <a href='{{ url_for("registration") }}'>Регистрация</a>
+        </li>
+        <li>
+            <a href='{{ url_for("login") }}'>Войти</a>
+        </li>
+    </ul>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
