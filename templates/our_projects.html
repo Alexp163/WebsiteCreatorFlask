@@ -6,14 +6,7 @@
 
 {% block content %}
 
-<p>
-  <a href="#">Разработатка сайтов</a>
-</p>
-<p>
-  <a href="#">Создание лендингов</a>
-</p>
-<p>
-  <a href="#">Продвижение сайтов</a>
-</p>
+{{ super() }}
+{% include "include/type_service.html" %}
 
 {% endblock %}

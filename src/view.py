@@ -20,3 +20,8 @@ def login():
 @app.route('/registration')
 def registration():
     return render_template('registration.html')
+
+
+@app.route('/work/1')
+def type_work():
+    return render_template('one_service.html')

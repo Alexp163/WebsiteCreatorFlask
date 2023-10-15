@@ -6,13 +6,7 @@
 
 {% block content %}
 
-     <ul>
-         <li>
-             <input type="text" placeholder="Введите логин">
-         </li>
-          <li>
-             <input type="text" placeholder="Введите пароль">
-         </li>
-     </ul>
+{{ super() }}
+{% include "include/login_service.html" %}
 
 {% endblock %}
