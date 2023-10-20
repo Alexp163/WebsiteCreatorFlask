@@ -20,8 +20,8 @@ class Development:
     id = db.Column(db.Integer(), primary_key=True) # идентификационный номер
     name_product = db.Column(db.String()) # наименование продукта(услуги)
 
-    technology = db.Column(db.String())
-    date_development = db.Column(db.String(10))
+    technology = db.Column(db.String()) # технология выполнения
+    date_development = db.Column(db.String(10)) # дата разработки продукта
 
-    price = db.Column(db.String(10))
-    developer = db.Column(db.String())
+    price = db.Column(db.String(10)) # цена продукта
+    developer = db.Column(db.String()) # разработчик
