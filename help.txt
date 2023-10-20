@@ -7,3 +7,8 @@
 7. В файле app.py прописывание пути к папке templates(template_folder="../templates")
 8. создание в templates папки include с микрошаблонами(main_menu.html, login_service.html и другие)
 9. создание динамической страницы one_service.html для каждой услуги с подключением во view.py
+10. устанавливаем flask_sqlalchemy(pip install flask_sqlalchemy)
+11. pip freeze>requirements.txt
+12. прописываем путь к папке db.py
+(app.config["SQLALCHEMY_DATABASE_URL"] = "sqlite:///slite.db"
+13. создание таблицы с параметрами продукта(комментарии в начале models.py)
