@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template
+from db_run import Development
 
 
 @app.route('/')
@@ -9,7 +10,8 @@ def index():
 
 @app.route('/our_projects')
 def our_projects():
-    return render_template('our_projects.html')
+    development = Development.query.all()
+    return render_template('our_projects.html', development=development)
 
 
 @app.route('/login')

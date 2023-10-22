@@ -1,0 +1,15 @@
+{% for d in development %}
+<p>
+  Вид услуги: <a href="#">{{ d.name_product }}</a>
+  <div>технология разработки: {{ d.technology }}; дата разработки:
+  {{ d.date_development }};  цена: {{ d.price }}; разработчик: {{ d.developer }}</div>
+</p>
+{% endfor %}
+
+
+
+
+<!--with app.app_context():-->
+<!--    development = Development(name_product = "разработка бэкэнда", technology = "flask",-->
+<!--                              date_development = "10.10.2023", price = "50000.00",-->
+<!--                              developer = "Александр Попов")-->

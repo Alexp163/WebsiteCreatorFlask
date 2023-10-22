@@ -10,5 +10,5 @@
 10. устанавливаем flask_sqlalchemy(pip install flask_sqlalchemy)
 11. pip freeze>requirements.txt
 12. прописываем путь к папке db.py
-(app.config["SQLALCHEMY_DATABASE_URL"] = "sqlite:///slite.db"
+(app.config["SQLALCHEMY_DATABASE_URL"] = "sqlite:///slite.db")
 13. создание таблицы с параметрами продукта(комментарии в начале models.py)
