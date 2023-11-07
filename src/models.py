@@ -33,6 +33,8 @@ class Service(db.Model):
 
     price = db.Column(db.Float())  # цена продукта
     developer = db.Column(db.String(20))  # разработчик
+    service_group_id = db.Column(db.ForeignKey("service_group.id"))  # id группы, к которой относится эта услуга
+    service_group = db.Relationship("ServiceGroup")  # ссылка на группу(id которой указан в вышестоящей строчке)
 
 
 class ServiceGroup(db.Model):
