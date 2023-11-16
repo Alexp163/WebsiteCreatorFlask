@@ -22,10 +22,15 @@ class Development(db.Model):
     price = db.Column(db.Float())  # цена продукта
     developer = db.Column(db.String(20))  # разработчик
 
+    def __repr__(self):
+        return (f"<Наименование продукта: {self.name_product}, технология: {self.technology}, "
+                f"дата разработки: {self.date_development}, цена: {self.price}, "
+                f"разработчик: {self.developer}>")
+
 
 class Service(db.Model):
     __tablename__ = 'service'
-    id = db.Column(db.Integer(), primary_kay=True)
+    id = db.Column(db.Integer(), primary_key=True)
     name_product = db.Column(db.String(20))  # наименование продукта
 
     technology = db.Column(db.Text())  # технология выполнения
@@ -36,6 +41,10 @@ class Service(db.Model):
     service_group_id = db.Column(db.ForeignKey("service_group.id"))  # id группы, к которой относится эта услуга
     service_group = db.Relationship("ServiceGroup")  # ссылка на группу(id которой указан в вышестоящей строчке)
 
+    def __repr__(self):
+        return (f"<Наименование продукта: {self.name_product}, технология: {self.technology}, "
+                f"дата разработки: {self.date_development}, цена: {self.price}, "
+                f"разработчик: {self.developer}>")
 
 class ServiceGroup(db.Model):
     __tablename__ = "service_group"
@@ -44,3 +53,8 @@ class ServiceGroup(db.Model):
     name = db.Column(db.String(100))  # название группы
     description = db.Column(db.Text())  # описание группы
     # создать руководителя группы
+
+    def __repr__(self):
+        return f"<Название группы: {self.name}, Описание группы: {self.description}>"
+
+

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block page_title %} Наши услуги - {{ service_group.name }} {% endblock %}
+
+{% block h1_title %} Наши услуги {{ service_group.name}} {% endblock %}
+
+{% block content %}
+{{ super() }}
+
+{% include "include/type_service.html" %}
+{% include "include/services.html" %}
+
+{% endblock %}

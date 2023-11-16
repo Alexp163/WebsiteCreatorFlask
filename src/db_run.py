@@ -34,23 +34,23 @@ with app.app_context():
     db.session.add(group4)
     db.session.commit()
     service = Service(name_product="Разработка дизайна сайта",
-                      technоlogi="Photoshop", date_development="7 дней",
+                      technology="Photoshop", date_development="7 дней",
                       price="10000.0",
-                      developer="Веб-дизайнер Иващук И.В")
+                      developer="Веб-дизайнер Иващук И.В", service_group = group1)
     db.session.add(service)
     service1 = Service(name_product="Верстка страниц сайта",
-                       technоlogi="HTML, CSS, Bootstrap",
+                       technology="HTML, CSS, Bootstrap",
                        date_development="10 дней", price="15000.0",
-                       developer="Верстальщик Сергеев В.Ф.")
+                       developer="Верстальщик Сергеев В.Ф.", service_group = group2)
     db.session.add(service1)
     service2 = Service(name_product="Разработка фронтенда сайта",
-                       technоlogi="Javascript, HTML, CSS",
+                       technology="Javascript, HTML, CSS",
                        date_development="14 дней", price="20000.0",
-                       developer="Фронтенд-разработчик Сурков А.С.")
+                       developer="Фронтенд-разработчик Сурков А.С.", service_group = group3)
     db.session.add(service2)
     service3 = Service(name_product="Разработка бэкэнда сайта",
-                       technоlogi="Python, flask", date_development="30 дней",
+                       technology="Python, flask", date_development="30 дней",
                        price="30000.0",
-                       developer="Бэкэнд разработчик Паштиян Х.А.")
+                       developer="Бэкэнд разработчик Паштиян Х.А.", service_group = group4)
     db.session.add(service3)
     db.session.commit()

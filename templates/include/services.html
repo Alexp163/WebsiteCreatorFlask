@@ -1,0 +1,14 @@
+{% for s in service %}
+
+<p>
+    Название продукта: <a href="#">{{ s.name_product }}</a>
+    <div>
+        <p>технология выполнения:    {{ s.technology }}</p>
+        <p>Дата изготовления:    {{ s.date_development }}</p>
+        <p>Стоимость работы:    {{ s.price }}</p>
+        <p>Разработчик продукта:    {{ s.developer }}</p>
+        <p> Группа продукта {{ s.service_group }}</p>
+    </div>
+</p>
+
+{% endfor %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_title %} Главная {% endblock %}
+
+{% block h1_title %} {% endblock %}
+
+{% block content %}
+
+{{ super() }}
+{% include "include/services.html" %}
+
+{% endblock %}
