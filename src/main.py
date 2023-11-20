@@ -1,5 +1,6 @@
-from app import app
-import view
+from src.app import app
+import src.view
+import src.admin
 
 def main():
     app.run(debug=True)

@@ -1,4 +1,4 @@
-from db import db
+from src.db import db
 
 
 # id - число name_product - наименование продукта, услуги technology -
