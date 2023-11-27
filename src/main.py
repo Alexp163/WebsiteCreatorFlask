@@ -1,6 +1,6 @@
-from src.app import app
-import src.view
-import src.admin
+from app import app
+import view
+import admin
 
 def main():
     app.run(debug=True)

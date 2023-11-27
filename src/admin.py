@@ -1,11 +1,22 @@
 from flask_admin import Admin
-from src.app import app
+from app import app
 from flask_admin.contrib.sqla import ModelView
-from src.models import Development, Service, ServiceGroup
-from src.db import db
+from models import Development, Service, ServiceGroup
+from db import db
 
 admin = Admin(app, __name__, template_mode="bootstrap3")
 
-admin.add_view(ModelView(Development, db.session))
-admin.add_view(ModelView(Service, db.session))
+
+class DevelopmentModelView(ModelView):
+    column_list = ('name_product', 'technology', 'date_development', 'price', 'developer')
+    form_excluded_columns = 'created_at', 'updated_at'
+
+
+class ServiceModelView(ModelView):
+    column_list = ('name_product', 'technology', 'date_development', 'price', 'developer')
+    form_excluded_columns = ('created_at', 'updated_at')
+
+admin.add_view(DevelopmentModelView(Development, db.session))
+admin.add_view(ServiceModelView(Service, db.session))
 admin.add_view(ModelView(ServiceGroup, db.session))
+
