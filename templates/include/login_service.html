@@ -1,8 +1,17 @@
- <ul>
-     <li>
-         <input type="text" placeholder="Введите логин">
-     </li>
-      <li>
-         <input type="text" placeholder="Введите пароль">
-     </li>
- </ul>
+<form action="#" method="post">
+{{ form.csrf_token }}
+    <ul>
+        <li>
+    <!--            <input type="text" placeholder="Введите логин">-->
+            {{ form.email(placeholder="Введите адрес электронной почты") }}
+        </li>
+        <li>
+    <!--                <input type="text" placeholder="Введите пароль">-->
+            {{ form.password(placeholder="Введите свой пароль") }}
+        </li>
+        <li>
+            <input type="submit" value="Нажать">
+        </li>
+    </ul>
+</form>
+

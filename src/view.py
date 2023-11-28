@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template
 from models import Development, Service, ServiceGroup
+from forms import LoginForm, RegisterForm
 
 
 @app.route('/')
@@ -17,12 +18,14 @@ def our_projects():
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    form = LoginForm()
+    return render_template('login.html', form=form)
 
 
 @app.route('/registration')
 def registration():
-    return render_template('registration.html')
+    form = RegisterForm()
+    return render_template('registration.html', form=form)
 
 
 @app.route('/work/1')

@@ -1,11 +1,21 @@
+<form action="#" method="post">
+{{ form.csrf_token }}
+
 <ul>
     <li>
-        <input type="text" placeholder="Введите логин">
+<!--        <input type="text" placeholder="Введите логин">-->
+        {{ form.email(placeholder="Введите адрес электронной почты") }}
     </li>
     <li>
-        <input type="text" placeholder="Введите пароль">
+<!--        <input type="text" placeholder="Введите пароль">-->
+        {{ form.password_1(placeholder="Введите пароль") }}
     </li>
     <li>
-        <input type="text" placeholder="Повторите паролль">
+<!--        <input type="text" placeholder="Повторите пароль">-->
+        {{ form.password_2(placeholder="Повторите пароль") }}
+    </li>
+    <li>
+        <input type="supmit" value="Нажать">
     </li>
 </ul>
+</form>
