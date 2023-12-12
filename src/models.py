@@ -69,3 +69,17 @@ class ServiceGroup(db.Model):
         return f"<Название группы: {self.name}, Описание группы: {self.description}>"
 
 
+class User(db.Model):
+    __tablename__ = "user"
+    id = Column(Integer(), primary_key=True)
+
+    nick_name = Column(String(100), unique=True)
+    email = Column(String(100), unique=True)
+    password_hash = Column(String(256))
+
+    created_at = Column(DateTime, server_default=func.now())
+    updated_at = Column(DateTime, server_onupdate=func.now())
+
+    def __repr__(self):
+        return f"<Email: {self.email}, Никнэйм: {self.nick_name}>"
+
