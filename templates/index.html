@@ -11,5 +11,8 @@
 
 {% include "include/type_service.html" %}
 {% include "include/services.html" %}
+{% if current_user.is_authenticated %}
+<p>Вы авторизованы. Ваша почта: {{ current_user.email }}</p>
+{% endif %}
 
 {% endblock %}

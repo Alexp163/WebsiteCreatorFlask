@@ -3,7 +3,8 @@ from app import app
 from flask import render_template, flash, request
 from models import Development, Service, ServiceGroup, User
 from forms import LoginForm, RegisterForm
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import login_user
 
 
 @app.route('/')
@@ -24,6 +25,14 @@ def login():
     if form.validate_on_submit():
         print("Кнопка нажата!!!")
         flash("Кнопка нажата")
+        email = form.email.data
+        password = form.password.data
+        user = User.query.filter_by(email=email).first()
+        if user is not None and check_password_hash(user.password_hash, password):
+            login_user(user)
+            flash("Авторизация успешна!!!")
+        else:
+            flash("Не верный логин или пароль!!!")
     return render_template('login.html', form=form)
 
 
