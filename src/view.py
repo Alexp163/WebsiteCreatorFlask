@@ -1,10 +1,11 @@
-from db import db
-from app import app
-from flask import render_template, flash, request
-from models import Development, Service, ServiceGroup, User
-from forms import LoginForm, RegisterForm
+from flask import render_template, flash, request, redirect, url_for
+from flask_login import login_user, login_required, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user
+
+from app import app
+from db import db
+from forms import LoginForm, RegisterForm
+from models import Development, Service, ServiceGroup, User
 
 
 @app.route('/')
@@ -14,6 +15,7 @@ def index():
 
 
 @app.route('/our_projects')
+@login_required
 def our_projects():
     development = Development.query.all()
     return render_template('our_projects.html', development=development)
@@ -59,11 +61,13 @@ def registration():
 
 
 @app.route('/work/1')
+@login_required
 def type_work():
     return render_template('one_service.html')
 
 
 @app.route('/our_service')
+@login_required
 def our_service():
     service = Service.query.all()
     return render_template('our_service.html', service=service)
@@ -77,3 +81,23 @@ def service_group(service_group_id):
     return render_template("service_group.html", service_group=service_group,
                            service_groups=service_groups, service=service)
 
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return render_template('index')
+
+
+@app.errorhandler(401)
+def custom(error):
+    return render_template('error401.html')
+
+
+@app.errorhandler(404)
+def custom(error):
+    return render_template('error404.html')
+
+
+@app.errorhandler(500)
+def custom(error):
+    return render_template('error500.html')
